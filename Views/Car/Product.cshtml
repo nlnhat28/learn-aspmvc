@@ -1,0 +1,13 @@
+@model string
+@{
+    ViewData["Title"] = "Product";
+    Layout = "_Layout";
+    var brand = (string.IsNullOrWhiteSpace(Model)) ? "Car" : Model;
+    var link = $"https://www.google.com/search?q={brand}&sxsrf=APwXEdc0Omk3dErsTnmW7Vh3zJuTzGwl3w:1685784812941&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiJtcXn5ab_AhUQAYgKHZVEA8QQ_AUoAXoECAEQAw&biw=1501&bih=738&dpr=1.25";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@brand</h1>
+    <p>See <a href="@link" target="_blank" style="text-decoration: none;">@brand collection</a> now</p>
+    <p class="text-secondary">@this.Path</p>
+</div>
