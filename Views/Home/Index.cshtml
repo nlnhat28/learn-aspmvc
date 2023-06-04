@@ -6,3 +6,36 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<hr>
+<div>
+    <p>
+        @Url.ActionLink()
+    </p>
+    <p>
+        @Url.Action()
+    </p>
+    <p>
+        @Url.Action("Privacy")
+    </p>
+    <p>
+        @Url.ActionLink("Collection", "Car", new {brand = "Lamborghini"})
+    </p>
+    <p>
+        @Url.ActionLink("Collection", "Car", new {area = "CarArea", brand = "Ferrari"})
+    </p>
+    <p>
+        @Url.Link("area", new {action = "Collection", controller = "Car", brand = "Audi"})
+    </p>
+    <p>
+        @Url.Link("collection1", new {action = "Collection", controller = "Car", brand = "BMW"})
+    </p>
+    <a class="nav-link text-dark" asp-area="CarArea" asp-controller="Car" asp-action="Collection" asp-route-brand="Audi">Audi Collection</a>
+    @{
+        var data = new Dictionary<string, string>()
+        {
+            {"brand", "Audi"},
+            {"color", "Black"}
+        };
+    }
+    <a class="nav-link text-dark" asp-area="CarArea" asp-controller="Car" asp-action="Collection" asp-all-route-data="@data">Audi Collection</a>
+</div>

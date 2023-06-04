@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MVC_Basic.Models
+namespace MVC_Basic.Areas.CarArea.Models
 {
     public class CarModel
     {
