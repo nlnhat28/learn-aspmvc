@@ -15,23 +15,24 @@ app.MapControllerRoute(
 
 ## Action
 * Is a non-static method, return anything (void, string, IActionResult,...)
-* IActionResult
-| Return type                 | Method                |
-| :---------------------------|:----------------------|
-| `ViewResult`                | `View()`              |
-| `ContentResult`             | `Content()`           |
-| `EmptyResult`               | `new EmptyResult()`   |
-| `FileResult`                | `File()`              |
-| `ForbidResult`              | `Forbid()`            |
-| `JsonResult`                | `Json()`              |
-| `LocalRedirectResult`       | `LocalRedirect()`     |
-| `RedirectResult`            | `Redirect()`          |
-| `RedirectToActionResult`    | `RedirectToAction()`  |
-| `RedirectToPageResult`      | `RedirectToRoute()`   |
-| `RedirectToRouteResult`     | `RedirectToPage()`    |
-| `PartialViewResult`         | `PartialView()`       |
-| `ViewComponentResult`       | `ViewComponent()`     |
-| `StatusCodeResult`          | `StatusCode()`        |
+* IActionResult:
+
+    | Return type                 | Method                |
+    | :---------------------------|:----------------------|
+    | `ViewResult`                | `View()`              |
+    | `ContentResult`             | `Content()`           |
+    | `EmptyResult`               | `new EmptyResult()`   |
+    | `FileResult`                | `File()`              |
+    | `ForbidResult`              | `Forbid()`            |
+    | `JsonResult`                | `Json()`              |
+    | `LocalRedirectResult`       | `LocalRedirect()`     |
+    | `RedirectResult`            | `Redirect()`          |
+    | `RedirectToActionResult`    | `RedirectToAction()`  |
+    | `RedirectToPageResult`      | `RedirectToRoute()`   |
+    | `RedirectToRouteResult`     | `RedirectToPage()`    |
+    | `PartialViewResult`         | `PartialView()`       |
+    | `ViewComponentResult`       | `ViewComponent()`     |
+    | `StatusCodeResult`          | `StatusCode()`        |
 
 # 👁️ Views
 ## Overloads

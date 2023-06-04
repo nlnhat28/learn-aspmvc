@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MVC_Basic.Models;
+using MVC_Basic.Areas.CarArea.Models;
 
 namespace MVC_Basic.Services
 {
@@ -15,7 +15,7 @@ namespace MVC_Basic.Services
                 new CarModel(1, "Lamborghini Huracan", 800000),
                 new CarModel(2, "Ferrari Laferrari", 2800000),
                 new CarModel(3, "Ferrari 488 GTB", 600000),
-                new CarModel(4, "Bugatti La noir", 3200000),
+                new CarModel(4, "Bugatti La noire", 3200000),
                 new CarModel(5, "Bugatti Chiron", 1500000),
                 new CarModel(6, "McLaren 720S", 1200000),
                 new CarModel(7, "McLaren P1", 900000)

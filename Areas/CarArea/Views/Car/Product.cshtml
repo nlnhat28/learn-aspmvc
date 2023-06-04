@@ -1,0 +1,21 @@
+@inject MVC_Basic.Services.CarService carService
+@{
+    ViewData["Title"] = "Product";
+    Layout = "_Layout";
+}
+@functions{
+    public string GenLink(string key)
+    {
+        key = key.Replace(" ", "+");
+        return $"https://www.google.com/search?q={key}&sxsrf=APwXEdc0Omk3dErsTnmW7Vh3zJuTzGwl3w:1685784812941&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiJtcXn5ab_AhUQAYgKHZVEA8QQ_AUoAXoECAEQAw&biw=1501&bih=738&dpr=1.25";
+    }
+}
+<h1 class="display-5">Product</h1>
+<div class="list-group">
+@foreach (var car in carService.Cars)
+{
+    <a class="list-group-item list-group-item-action" href="@GenLink(@car.Name)" target="_blank">@car.Name: $@car.Price</a>
+}
+</div>
+<hr>
+<p><strong>Total: @carService.Cars.Count</strong></p>

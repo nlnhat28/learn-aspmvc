@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Routing.Constraints;
 using MVC_Basic.Services;
 
 namespace MVC_Basic;
@@ -35,9 +36,15 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
+        app.MapAreaControllerRoute(
+            name: "area",
+            pattern: "{controller}/{action=Index}/{id?}",
+            areaName: "CarArea");
+
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
         app.Run(); 
     }

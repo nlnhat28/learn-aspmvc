@@ -8,9 +8,10 @@ using Newtonsoft.Json;
 using MVC_Basic.Models;
 using MVC_Basic.Services;
 
-namespace MVC_Basic.Controllers
+namespace MVC_Basic.Areas.CarArea.Controllers
 {
-
+    [Area("CarArea")]
+    // [Route("super-car/[action]")]
     public class CarController : Controller
     {
         private readonly ILogger<CarController> _logger;
@@ -77,13 +78,22 @@ namespace MVC_Basic.Controllers
             _logger.LogWarning("Car/Redirect");
             return Redirect(url);
         }
-        public IActionResult Product(string? brand)
-        {
-            // _logger.LogWarning("Car/Product");
-            // return View("MyViews/Car.cshtml", brand);
 
+        [Route("/my-collection", Order = 1, Name = "collection1")]                           // localhost:5130/my-collection
+        [Route("my-collection/[controller]/[action]", Order = 2, Name = "collection2")]     // localhost:5130/my-collection/Car/Collection
+        [Route("[controller]-[action].html", Order = 3, Name = "collection3")]              // localhost:5130/Car-Collection.html
+
+        public IActionResult Collection(string? brand)
+        {
+            _logger.LogWarning("Car/Collection");
+
+            // return View("MyViews/Car.cshtml", brand);
+            return View("Collection", brand);
+        }
+        public IActionResult Product()
+        {
             _logger.LogWarning("Car/Product");
-            return View("Product", brand);
+            return View();
         }
         public IActionResult Search(string? q)
         {

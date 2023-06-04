@@ -1,7 +1,9 @@
+@using MVC_Basic.Areas.CarArea.Models
 @model List<CarModel>
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = "Search 2.0";
     Layout = "_Layout";
+    var listCars = ViewBag.ListCars as List<CarModel>;
 }
 @functions{
     public string GenLink(string key)
@@ -11,23 +13,22 @@
     }
 }
 <div class="text-center">
-    <h1 class="display-4">Search</h1>
-@if (Model == null)
+    <h1 class="display-4">Search 2.0</h1>
+@if (listCars == null)
 {
     <p>See all cars in <a href="https://www.google.com/search?q=Car&sxsrf=APwXEdd7dr1fmcKrV0XQyp7arMqLUfJ98w:1685785561268&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjE06_M6Kb_AhXTBIgKHWEHAqAQ_AUoAXoECAEQAw&biw=1501&bih=738&dpr=1.25" target="_blank" style="text-decoration: none;">my collection</a> now</p>
-    <p class="text-secondary">@this.Path</p>
 }
-else if (Model.Count == 0)
+else if (listCars.Count == 0)
 {
     <p class="alert alert-danger">Oops... No matching results</p>
 }
 else
 {
-    @foreach (var car in Model)
+    @foreach (var car in listCars)
     {
         <div style="display: inline-block; margin: 10px 20px;"><a href=@GenLink(@car.Name) target="_blank" style="text-decoration: none;">@car.Name</a>:  $@car.Price</div>
     }
     <hr>
-    <p><strong>Total: @Model.Count</strong></p>
+    <p><strong>Total: @listCars.Count</strong></p>
 }
 </div>
